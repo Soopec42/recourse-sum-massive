@@ -1,0 +1,29 @@
+#include <iostream>
+#include <list>
+#include <vector>
+using namespace std;
+
+int sum(vector<int> vect)
+{
+	if (vect.empty()) {
+		return 0; 
+	}
+	if (vect.size() == 1)
+	{
+		return vect[0];
+	}
+	else
+	{
+		int last = vect.back();
+		vect.pop_back();
+		return last + sum(vect);
+	}
+
+}
+
+int main()
+{
+	vector<int> my_list = {9, 2, 6, 1};
+	int summa = sum(my_list);
+	cout << summa;
+}
